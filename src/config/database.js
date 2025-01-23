@@ -1,4 +1,4 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise'); // Use the promise-based version of mysql2
 require('dotenv').config();
 
 const pool = mysql.createPool({
@@ -6,11 +6,24 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  waitForConnections: true
-})
+  waitForConnections: true,
+});
 
-pool.getConnection((err, connection) => {
-  if (err) {
+(async () => {
+  try {
+    const connection = await pool.getConnection();
+    console.log('Connected to the database.');
+
+    try {
+      const [results] = await connection.query('SELECT 1 + 1 AS solution');
+      console.log('Query result:', results);
+    } catch (queryErr) {
+      console.error('Error executing query:', queryErr);
+    } finally {
+      // Release the connection back to the pool
+      connection.release();
+    }
+  } catch (err) {
     if (err.code === 'PROTOCOL_CONNECTION_LOST') {
       console.error('Database connection was closed.');
     } else if (err.code === 'ER_CON_COUNT_ERROR') {
@@ -20,23 +33,7 @@ pool.getConnection((err, connection) => {
     } else {
       console.error('Error connecting to database:', err.message);
     }
-  } else {
-    console.log('Connected to the database.');
-
-    // Perform your queries here
-    connection.query('SELECT 1 + 1 AS solution', (queryErr, results) => {
-      if (queryErr) {
-        console.error('Error executing query:', queryErr);
-      } else {
-        console.log('Query result:', results);
-      }
-
-      // Release the connection back to the pool
-      connection.release();
-    });
   }
-});
+})();
 
 module.exports = pool;
-
-
