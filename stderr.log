@@ -1,0 +1,34 @@
+Error: Encoding not recognized: 'undefined' (searched as: 'undefined')
+    at PromisePool.query (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/mysql2/lib/promise/pool.js:36:22)
+    at Object.getAll (/home/orientso/sungumbackend/src/models/roomModel.js:12:36)
+    at getAllRooms (/home/orientso/sungumbackend/src/controllers/roomController.js:76:34)
+    at Layer.handle [as handle_request] (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/layer.js:95:5)
+    at /home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:280:10) {
+  code: undefined,
+  errno: undefined,
+  sql: undefined,
+  sqlState: undefined,
+  sqlMessage: undefined
+}
+Error: Encoding not recognized: 'undefined' (searched as: 'undefined')
+    at PromisePool.query (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/mysql2/lib/promise/pool.js:36:22)
+    at Object.getAll (/home/orientso/sungumbackend/src/models/roomModel.js:12:36)
+    at getAllRooms (/home/orientso/sungumbackend/src/controllers/roomController.js:76:34)
+    at Layer.handle [as handle_request] (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/layer.js:95:5)
+    at /home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orientso/nodevenv/sungumbackend/18/lib/node_modules/express/lib/router/index.js:280:10) {
+  code: undefined,
+  errno: undefined,
+  sql: undefined,
+  sqlState: undefined,
+  sqlMessage: undefined
+}
