@@ -7,10 +7,10 @@ class UserModel {
   }
 
   static async create(userData) {
-    const { name, email } = userData;
+    const { name, email, password } = userData;
     const [result] = await db.query(
-      'INSERT INTO users (name, email) VALUES (?, ?)',
-      [name, email]
+      'INSERT INTO users (name, email, password) VALUES (?, ?)',
+      [name, email, password]
     );
     return result;
   }
